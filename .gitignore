@@ -11,6 +11,7 @@ tests/system_test/tmp
 output/*
 .mypy_cache
 tags
+compile_commands.json
 
 # vim backup and temp files
 *~
