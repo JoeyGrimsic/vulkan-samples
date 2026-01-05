@@ -21,6 +21,7 @@
 #include "core/util/logging.hpp"
 #include "filesystem/legacy.h"
 #include "platform/window.h"
+#include <vulkan/vulkan_core.h>
 
 #if defined(VKB_DEBUG) || defined(VKB_VALIDATION_LAYERS)
 /// @brief A debug callback called from Vulkan validation layers.
