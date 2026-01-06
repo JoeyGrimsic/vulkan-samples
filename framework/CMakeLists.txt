@@ -487,6 +487,9 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
     vma
     spirv-cross-glsl
     spdlog
+    #########################################################
+    assimp	# added by joseph to link assimp dependency
+    #########################################################
     plugins)
 
 if(${NEED_LINK_ATOMIC})

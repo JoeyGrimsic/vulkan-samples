@@ -384,6 +384,8 @@ void HelloTriangleV13::init_device()
 	vkGetDeviceQueue(context.device, context.graphics_queue_index, 0, &context.queue);
 }
 
+// POST-INSTANCE-INITIALIZATION 
+
 /**
  * @brief Initializes the vertex buffer by creating it, allocating memory, binding the memory, and uploading vertex data.
  * @note This function must be called after the Vulkan device has been initialized.
