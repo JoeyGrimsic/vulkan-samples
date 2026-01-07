@@ -796,7 +796,7 @@ void HelloTriangleV13::init_pipeline()
 			shader_folder = "slang";
 			break;
 		default:
-			shader_folder = "glsl";
+			shader_folder = "glsl"; // joseph: may want to change in the future so we can use slang
 	}
 
 	std::array<VkPipelineShaderStageCreateInfo, 2> shader_stages = {{
