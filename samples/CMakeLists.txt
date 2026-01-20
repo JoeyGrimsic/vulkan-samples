@@ -33,6 +33,24 @@ function(add_sub_dirs DIRECTORY)
 
     foreach (CURR_DIR ${DIR_LIST})
         if (EXISTS "${DIRECTORY}/${CURR_DIR}/CMakeLists.txt")
+	    # # --- START MODIFICATION ---
+	    #        # Define the samples you want to build here.
+	    #        # If the list is empty, it will build EVERYTHING (default behavior).
+	    #        set(MY_WHITELIST 
+	    #            "hello_triangle" 
+	    #            "dynamic_rendering"
+	    #        )
+	    #
+	    #        # If the whitelist is defined AND not empty, check if current dir is in it
+	    #        if(NOT "${MY_WHITELIST}" STREQUAL "")
+	    #            list(FIND MY_WHITELIST ${CURR_DIR} _INDEX)
+	    #            # If not found in list (index is -1), return from this iteration
+	    #            if(${_INDEX} EQUAL -1)
+	    #                continue() 
+	    #            endif()
+	    #        endif()
+	    #        # --- END MODIFICATION ---
+
             add_subdirectory(${DIRECTORY}/${CURR_DIR})
             list(APPEND TOTAL_SAMPLE_ID_LIST ${CURR_DIR})
         else ()

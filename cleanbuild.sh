@@ -8,5 +8,5 @@ cmake -G "Unix Makefiles" -Bbuild/linux \
   -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
 # Then build as normal
-cmake --build build/linux --config Release --target vulkan_samples -j$(nproc)
+cmake --build build/linux --config Release --target vulkan_samples -j$(nproc) --parallel 2
 ./build/linux/app/bin/Release/x86_64/vulkan_samples sample hello_triangle_1_3
