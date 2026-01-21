@@ -46,6 +46,7 @@ void Instancing::request_gpu_features(vkb::core::PhysicalDeviceC &gpu)
 {
 	auto &requested_features = gpu.get_mutable_requested_features();
 
+	// joseph: so if there are some features that we want to query the gpu for, we do it at the beginning like this:
 	// Enable anisotropic filtering if supported
 	if (gpu.get_features().samplerAnisotropy)
 	{
