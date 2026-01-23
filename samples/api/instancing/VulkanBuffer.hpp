@@ -1,7 +1,6 @@
 // this entire file is written by Gemini 3 Thinking
 // i think the idea is to make a wrapper class so that we dont have to manually call the instancing destructors in that example.
 #pragma once
-#define VK_NO_PROTOTYPES // what does it mean the macro is redefined? is that bad?
 #include "volk.h"
 #include <stdexcept>
 
@@ -9,7 +8,7 @@ class VulkanBuffer {
 public:
     VulkanBuffer(VkDevice device, VkPhysicalDevice physicalDevice, VkDeviceSize size, VkBufferUsageFlags usage, VkMemoryPropertyFlags properties) 
         : device(device) {
-        
+
         // 1. Create the Buffer handle
         VkBufferCreateInfo bufferInfo{};
         bufferInfo.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO; // REQUIRED
@@ -51,7 +50,7 @@ private:
     VkBuffer bufferHandle = VK_NULL_HANDLE;
     VkDeviceMemory memoryHandle = VK_NULL_HANDLE;
 
-    // Helper to find the right memory "drawer" on your GPU
+    // Helper to find the right memory "drawer" on your GPU -- also gemini claims this helper is standard boilerplate
     uint32_t findMemoryType(VkPhysicalDevice physicalDevice, uint32_t typeFilter, VkMemoryPropertyFlags properties) {
         VkPhysicalDeviceMemoryProperties memProperties;
         vkGetPhysicalDeviceMemoryProperties(physicalDevice, &memProperties);
